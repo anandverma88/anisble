@@ -10,7 +10,11 @@ jobs:
           command: |
             sudo apt-get update
             sudo apt install python3-pip
+            sudo apt install git
             pip3 install ansible
+            git clone https://github.com/anandverma88/anisble.git
+            cd ansible
+            ansible-playbook test.yml
             pwd
             ls -lart
 
