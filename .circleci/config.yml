@@ -11,9 +11,9 @@ jobs:
       #       sudo apt-get install ansible
       - run:
           name: executing ansible playbook
+          working_directory: ~/workspace/src
           command: |
             pwd
-            cd ansible
             ls -lart
 
 workflows:
