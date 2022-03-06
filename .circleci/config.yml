@@ -12,7 +12,8 @@ jobs:
       - run:
           name: executing ansible playbook
           command: |
-            ansible-playbook ../test.yml
+            pwd
+            ls -lart
 
 workflows:
   version: 2
