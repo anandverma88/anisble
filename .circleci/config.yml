@@ -2,19 +2,35 @@ version: 2
 anchors:  
 jobs:
   test:
-    docker:
-      - image: 'tomonorimatsumura/centos7-ansible:yum'
-    steps: 
-      # - run: 
-      #     name: Installing prerequiste
-      #     command: |
-      #       sudo apt-get install ansible
+    orbs: 
+      ansible: orbss/ansible@0.2.3
+    # steps: 
+    #   # - run: 
+    #   #     name: Installing prerequiste
+    #   #     command: |
+    #   #       sudo apt-get install ansible
+    #   - run:
+    #       name: executing ansible playbook
+    #       working_directory:  /home/circleci/
+    #       command: |
+    #         pwd
+    #         ls -lart
+    steps:
       - run:
-          name: executing ansible playbook
-          working_directory:  /home/circleci/
+          name: Show Ansible version
+          command: ansible --version
+      - run:
+          name: Execute Ansible Playbook
           command: |
-            pwd
-            ls -lart
+            cd $CIRCLE_WORKING_DIRECTORY
+            ansible-playbook -i localhost test.yml
+      - run:
+          name: 'Execute Ansible Playbook again, checking to make sure it''s idempotent.'
+          command: |
+            cd $CIRCLE_WORKING_DIRECTORY
+            ansible-playbook -i localhost test.yml
+
+
 
 workflows:
   version: 2
