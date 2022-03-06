@@ -2,13 +2,13 @@ version: 2
 anchors:  
 jobs:
   test:
-    machine:
-      image: ubuntu-2004:202111-01
+    docker:
+      - image: 'tomonorimatsumura/centos7-ansible:yum'
     steps: 
-      - run: 
-          name: Installing prerequiste
-          command: |
-            sudo apt-get install ansible
+      # - run: 
+      #     name: Installing prerequiste
+      #     command: |
+      #       sudo apt-get install ansible
       - run:
           name: executing ansible playbook
           command: |
