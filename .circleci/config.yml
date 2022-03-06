@@ -13,6 +13,7 @@ jobs:
           name: executing ansible playbook
           command: |
             pwd
+            cd ansible
             ls -lart
 
 workflows:
