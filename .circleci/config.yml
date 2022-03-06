@@ -13,7 +13,7 @@ jobs:
             sudo apt install git
             pip3 install ansible
             git clone https://github.com/anandverma88/ansible.git
-            ll -lart
+            ls -lart
             cd ansible
             ansible-playbook test.yml
             pwd
