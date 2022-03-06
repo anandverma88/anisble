@@ -14,6 +14,8 @@ jobs:
             pip3 install ansible
             git clone https://github.com/anandverma88/ansible.git
   Execution:
+    machine:
+      image: ubuntu-2004:current
     steps: 
       - run: 
           name: Installing prerequiste
