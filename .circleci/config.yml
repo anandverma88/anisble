@@ -29,6 +29,6 @@ workflows:
   build:
     jobs:
       - Installing prerequiste
-      - Execution
+      - Execution:
           requires:
             - Installing prerequiste
