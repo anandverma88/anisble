@@ -2,8 +2,8 @@ version: 2
 anchors:  
 jobs:
   test:
-  - steps: 
-    - run: echo "A more familiar hi"
+    steps: 
+      - run: echo "A more familiar hi"
 workflows:
   version: 2
   build:
