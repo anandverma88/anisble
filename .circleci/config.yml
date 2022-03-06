@@ -11,7 +11,7 @@ jobs:
       #       sudo apt-get install ansible
       - run:
           name: executing ansible playbook
-          working_directory: ~/workspace/src
+          working_directory:  /home/circleci/
           command: |
             pwd
             ls -lart
