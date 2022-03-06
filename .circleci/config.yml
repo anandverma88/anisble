@@ -16,7 +16,7 @@ jobs:
             cd ansible
             ansible-playbook test.yml
             pwd
-            ls -lart
+            
 
 
 workflows:
