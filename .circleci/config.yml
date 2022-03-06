@@ -30,3 +30,5 @@ workflows:
     jobs:
       - Installing prerequiste
       - Execution
+          requires:
+            - Installing prerequiste
