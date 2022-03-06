@@ -2,34 +2,15 @@ version: 2
 anchors:  
 jobs:
   test:
-    orbs: 
-      ansible: orbss/ansible@0.2.3
-    # steps: 
-    #   # - run: 
-    #   #     name: Installing prerequiste
-    #   #     command: |
-    #   #       sudo apt-get install ansible
-    #   - run:
-    #       name: executing ansible playbook
-    #       working_directory:  /home/circleci/
-    #       command: |
-    #         pwd
-    #         ls -lart
-    steps:
-      - run:
-          name: Show Ansible version
-          command: ansible --version
-      - run:
-          name: Execute Ansible Playbook
+    machine:
+      image: ubuntu-2004:current
+    steps: 
+      - run: 
+          name: Installing prerequiste
           command: |
-            cd $CIRCLE_WORKING_DIRECTORY
-            ansible-playbook -i localhost test.yml
-      - run:
-          name: 'Execute Ansible Playbook again, checking to make sure it''s idempotent.'
-          command: |
-            cd $CIRCLE_WORKING_DIRECTORY
-            ansible-playbook -i localhost test.yml
-
+            sudo apt-get update
+            sudo apt install python3-pip
+            pwd
 
 
 workflows:
