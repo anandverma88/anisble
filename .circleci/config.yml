@@ -2,6 +2,8 @@ version: 2
 anchors:  
 jobs:
   test:
+    machine:
+      image: ubuntu-2004:202111-01
     steps: 
       - run: echo "A more familiar hi"
 workflows:
