@@ -1,0 +1,5 @@
+version: 2
+anchors:
+  steps: 
+    steps:
+    - run: echo "A more familiar hi"
